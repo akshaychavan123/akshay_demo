@@ -1,33 +1,14 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.3"
-server "172.31.9.102", user: "ubuntu", roles: %w{app web}, other_property: :other_value
 
-
-set :application, "ec2-3-7-70-212.ap-south-1.compute.amazonaws.com"
+set :application, "sample"
 set :repo_url, "https://github.com/akshaychavan123/akshay_demo.git"
-
-set :ssh_options, {
-  keys: ["/home/dev/.ssh/id_rsa
-  "],
-  forward_agent: true,
-  auth_methods: ["publickey"]
-}
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
-# set :deploy_to, "/var/www/my_app_name"
-
-# Default value for :format is :airbrussh.
-# set :format, :airbrussh
-
-# You can configure the Airbrussh format using :format_options.
-# These are the defaults.
-# set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
-
-# Default value for :pty is false
-# set :pty, true
+set :deploy_to, "/home/ubuntu/sample"
 
 # Default value for :linked_files is []
 # append :linked_files, "config/database.yml", 'config/master.key'
@@ -46,3 +27,20 @@ set :ssh_options, {
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
+
+# SSH Options
+set :ssh_options, {
+  user: "ubuntu",
+  keys: [File.expand_path("~/.ssh/id_rsa")],
+  forward_agent: true,
+  auth_methods: ["publickey"]
+}
+
+# RVM settings if applicable
+# set :rvm_ruby_version, '2.6.3'
+
+# Uncomment if using AWS CodeDeploy
+# set :deploy_via, :remote_cache
+
+# Custom tasks from lib/capistrano/tasks if defined
+# Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }
