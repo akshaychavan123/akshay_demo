@@ -54,7 +54,7 @@ server "ec2-3-7-70-212.ap-south-1.compute.amazonaws.com",
   roles: %w{web app},
   ssh_options: {
     user: "ubuntu", # overrides user setting above
-    keys: %w(/home/ubuntu/.ssh/id_rsa),
+    keys: %w(/home/dev/.ssh/id_rsa),
     forward_agent: false,
     auth_methods: %w(publickey password)
     # password: "please use keys"
