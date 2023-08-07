@@ -7,7 +7,7 @@ set :application, "ec2-3-7-70-212.ap-south-1.compute.amazonaws.com"
 set :repo_url, "https://github.com/akshaychavan123/akshay_demo.git"
 
 set :ssh_options, {
-  keys: ["/home/ubuntu/.ssh/id_rsa
+  keys: ["/home/dev/.ssh/id_rsa
   "],
   forward_agent: true,
   auth_methods: ["publickey"]

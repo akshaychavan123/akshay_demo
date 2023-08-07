@@ -50,12 +50,12 @@ server "172-31-9-102", user: "ubuntu", roles: %w{app web}, other_property: :othe
 # The server-based syntax can be used to override options:
 # ------------------------------------
 server "ec2-3-7-70-212.ap-south-1.compute.amazonaws.com",
-  user: "ubuntu",
+  user: "dev",
   roles: %w{web app},
   ssh_options: {
-    user: "ubuntu", # overrides user setting above
+    user: "dev", # overrides user setting above
     keys: %w(/home/dev/.ssh/id_rsa),
     forward_agent: false,
-    auth_methods: %w(publickey password)
+    auth_methods: %w(password)
     # password: "please use keys"
   }
