@@ -1,8 +1,17 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.3"
-server "172-31-9-102", user: "ubuntu", roles: %w{app web}, other_property: :other_value
+server "172.31.9.102", user: "ubuntu", roles: %w{app web}, other_property: :other_value
+
+
 set :application, "ec2-3-7-70-212.ap-south-1.compute.amazonaws.com"
 set :repo_url, "https://github.com/akshaychavan123/akshay_demo.git"
+
+set :ssh_options, {
+  keys: ["/home/ubuntu/.ssh/id_rsa
+  "],
+  forward_agent: true,
+  auth_methods: ["publickey"]
+}
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
