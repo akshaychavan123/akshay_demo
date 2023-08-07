@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @facebook.name %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @facebook.age %>
+</p>
+
+<%= link_to 'Edit', edit_facebook_path(@facebook) %> |
+<%= link_to 'Back', facebooks_path %>
