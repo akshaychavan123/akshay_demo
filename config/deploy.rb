@@ -34,7 +34,7 @@ set :ssh_options, {
   keys: %w(/home/ubuntu/.ssh/id_rsa),
   forward_agent: true,
   auth_methods: %w(publickey),
-  connect_timeout: 60 # Increase the timeout value as needed
+  connect_timeout: 600 # Increase the timeout value as needed
 }
 
 # RVM settings if applicable
