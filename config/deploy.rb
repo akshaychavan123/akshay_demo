@@ -31,9 +31,10 @@ set :deploy_to, "/home/ubuntu/sample"
 # SSH Options
 set :ssh_options, {
   user: "ubuntu",
-  keys: [File.expand_path("~/.ssh/id_rsa")],
+  keys: %w(/home/ubuntu/.ssh/id_rsa),
   forward_agent: true,
-  auth_methods: ["publickey"]
+  auth_methods: %w(publickey),
+  connect_timeout: 60 # Increase the timeout value as needed
 }
 
 # RVM settings if applicable
