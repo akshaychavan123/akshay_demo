@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.3"
 
-set :application, "akshay"
+set :application, "ec2-3-7-70-212.ap-south-1.compute.amazonaws.com"
 set :repo_url, "https://github.com/akshaychavan123/akshay_demo.git"
 
 # Default branch is :master
